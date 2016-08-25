@@ -1686,17 +1686,16 @@
         <static-array name='unk_26_j' type-name='int32_t' count='2'/> uninitialized? * 2
         <int8_t name='unk_26_k'/>
 
-        <stl-vector name='race_ids' type-name='int32_t'/>
-        <stl-vector name='unk_home_ids' type-name='int32_t'
-            comment='multiple elements when choosing a race; one when choosing a home (or 0 elements for outsider)'/>
+        <stl-vector name='race_ids' type-name='int32_t' ref-target='creature_raw'/>
+        <stl-vector name='highlighted_entity_ids' type-name='int32_t' ref-target='historical_entity'/>
+        <int32_t name='race_idx'/>
 
-        <int32_t name='unk_28_a'/>
-        <stl-vector name='unk_28_b'/>
-        <int32_t name='unk_28_c'/>
+        <stl-vector name='wild_creature_ids' type-name='int32_t' ref-target='creature_raw'/>
+        <int32_t name='wild_creature_idx'/>
         <stl-vector name='unk_28_d'/>
         <int32_t name='unk_28_e'/>
-        <stl-vector name='unk_28_f'/>
-        <int32_t name='unk_28_g'/>
+        <stl-vector name='home_entity_ids' type-name='int32_t' ref-target='historical_entity'/>
+        <int32_t name='home_entity_idx'/>
 
         <int8_t name='unk_29'/>
 
