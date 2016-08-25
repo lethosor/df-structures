@@ -1711,6 +1711,25 @@
         <int8_t name='unk_31'/>
         <pointer name='unk_32'/>
 
+        <stl-vector name='unk_33_a'/>
+        <stl-vector name='unk_33_b'/>
+        <stl-vector name='unk_33_c'/>
+
+        <int32_t name='unk_34'/> uninitialized?
+
+        <stl-vector name='unk_35_a'/>
+        <stl-vector name='unk_35_b'/>
+
+        <int32_t name='unk_36'/> uninitialized?
+
+        <stl-vector name='unk_37_a'/>
+        <stl-vector name='unk_37_b'/>
+        <stl-vector name='unk_37_c'/>
+
+        <pointer name='unk_38'/> uninitialized?
+
+        <static-array name='unk_39' type-name='int32_t' count='84'/> uninitialized/padding?
+
 <!--
         <static-array name='unk_30' type-name='int32_t' count='9'/>
         <stl-vector name='unk_31' type-name='int32_t'/>
