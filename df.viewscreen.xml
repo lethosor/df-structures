@@ -1679,7 +1679,7 @@
         <stl-vector name='unk_26_c'/>
         <stl-vector name='unk_26_d'/>
         <static-array name='unk_26_e' type-name='int32_t' count='5'/>
-        <stl-vector name='unk_26_f'/>
+        <stl-vector name='needs'/>
         <int32_t name='unk_26_g'/>
         <pointer name='unk_26_h'/>
         <static-array name='unk_26_i' type-name='int32_t' count='2'/> -1 * 2
@@ -1697,35 +1697,41 @@
         <stl-vector name='home_entity_ids' type-name='int32_t' ref-target='historical_entity'/>
         <int32_t name='home_entity_idx'/>
 
-        <int8_t name='unk_29'/>
-
-        <pointer name='unk_30_a'/>
-        <pointer name='unk_30_b'/>
-        <pointer name='unk_30_c'/>
-        <int32_t name='unk_30_d'/>
-        <int32_t name='unk_30_e'/>
-        <int32_t name='unk_30_f'/> uninitialized?
-        <int32_t name='unk_30_g'/> uninitialized?
+        <enum base-type='int8_t' name='sel_trait_column'>
+            <enum-item name='SkillsColumn'/>
+            <enum-item name='AttributesColumn'/>
+        </enum>
+        <int32_t name='attribute_idx'/>
+        <int32_t name='attribute_points_remaining'/>
+        <stl-vector name='skill_list'>
+            <enum base-type='int16_t' type-name='job_skill'/>
+        </stl-vector>
+        <int32_t name='skill_idx'/>
+        <int32_t name='skill_points_remaining'/>
 
         <int8_t name='unk_31'/>
         <pointer name='unk_32'/>
 
-        <stl-vector name='unk_33_a'/>
-        <stl-vector name='unk_33_b'/>
-        <stl-vector name='unk_33_c'/>
+        <stl-vector name='background_lines' pointer-type='stl-string'/>
+        <stl-vector name='sites' pointer-type='world_site' comment='v0.40.01'/>
 
-        <int32_t name='unk_34'/> uninitialized?
+        <stl-vector name='background_type'>
+            <enum base-type='int32_t'>
+                <enum-item name='LocallyImportant'/>
+                <enum-item name='Peasant'/>
+            </enum>
+        </stl-vector>
+        <int32_t name='background_idx'/> uninitialized?
 
         <stl-vector name='unk_35_a'/>
-        <stl-vector name='unk_35_b'/>
+        <stl-vector name='description_lines' pointer-type='stl-string'/>
 
-        <int32_t name='unk_36'/> uninitialized?
+        <int32_t name='thoughts_pos'/> uninitialized?
+        <stl-vector name='thoughts_lines_1'/>
+        <stl-vector name='thoughts_lines_2'/>
+        <stl-vector name='thoughts_lines_3'/>
 
-        <stl-vector name='unk_37_a'/>
-        <stl-vector name='unk_37_b'/>
-        <stl-vector name='unk_37_c'/>
-
-        <pointer name='unk_38'/> uninitialized?
+        <bool name='in_customize_values'/>
 
         <static-array name='unk_39' type-name='int32_t' count='84'/> uninitialized/padding?
 
