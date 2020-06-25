@@ -15,6 +15,8 @@ parser.add_argument('separator', nargs='?', default='\n')
 
 
 def list_files(dir):
+    yield 'codegen.out.xml'
+    yield 'global_objects.h'
     yield 'static.inc'
     for t in ('ctors', 'enums', 'fields'):
         yield 'static.%s.inc' % t
@@ -22,7 +24,7 @@ def list_files(dir):
         yield 'static.fields-%s.inc' % chr(c)
     for file in glob.glob(os.path.join(dir, "*.xml")):
         tree = lxml.etree.parse(file)
-        for etype in ('enum-type', 'bitfield-type', 'struct-type', 'class-type'):
+        for etype in ('enum-type', 'bitfield-type', 'struct-type', 'class-type', 'df-linked-list-type', 'df-other-vectors-type'):
             for node in tree.xpath('/data-definition/' + etype):
                 name = node.attrib.get('type-name')
                 if not name:
