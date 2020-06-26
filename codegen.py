@@ -14,7 +14,13 @@ parser.add_argument('output_dir', nargs='?', default='codegen')
 parser.add_argument('separator', nargs='?', default='\n')
 
 
-xslt_transforms = [lxml.etree.XSLT(lxml.etree.parse('lower-%i.xslt' % i)) for i in (1, 2)]
+xslt_trees = [lxml.etree.parse('lower-%i.xslt' % i) for i in (1, 2)]
+xslt_transforms = list(map(lxml.etree.XSLT, xslt_trees))
+
+
+_ld_url = xslt_trees[0].getroot().nsmap['ld']
+def ld_name(name):
+    return lxml.etree.QName(_ld_url, name)
 
 
 def load_and_transform(filename):
@@ -26,7 +32,7 @@ def load_and_transform(filename):
 
 def write_codegen_out_xml(trees, output_dir):
     src_root = trees[0].getroot()
-    new_root = src_root.makeelement('{%s}data-definition' % src_root.nsmap['ld'], nsmap=src_root.nsmap)
+    new_root = src_root.makeelement(ld_name('data-definition'), nsmap=src_root.nsmap)
     new_root.text = '\n    '
     for tree in trees:
         for child in tree.getroot().iterchildren():
