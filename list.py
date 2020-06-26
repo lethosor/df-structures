@@ -15,7 +15,6 @@ parser.add_argument('separator', nargs='?', default='\n')
 
 
 def list_files(dir):
-    yield 'codegen.out.xml'
     yield 'global_objects.h'
     yield 'static.inc'
     for t in ('ctors', 'enums', 'fields'):
