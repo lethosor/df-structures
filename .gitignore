@@ -1,4 +1,4 @@
-codegen/*
+out/*
 */nextid.txt
 */vtables.txt
 */all-vmethods.txt

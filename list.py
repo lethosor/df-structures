@@ -10,7 +10,7 @@ import lxml.etree
 
 parser = argparse.ArgumentParser(description='List all generated files')
 parser.add_argument('input_dir', nargs='?', default='.')
-parser.add_argument('output_dir', nargs='?', default='codegen')
+parser.add_argument('output_dir', nargs='?', default='out')
 parser.add_argument('separator', nargs='?', default='\n')
 
 

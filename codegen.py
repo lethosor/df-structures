@@ -10,7 +10,7 @@ import lxml.etree
 
 parser = argparse.ArgumentParser(description='List all generated files')
 parser.add_argument('input_dir', nargs='?', default='.')
-parser.add_argument('output_dir', nargs='?', default='codegen')
+parser.add_argument('output_dir', nargs='?', default='out')
 parser.add_argument('separator', nargs='?', default='\n')
 
 
@@ -44,7 +44,7 @@ def write_codegen_out_xml(trees, output_dir):
 def main():
     args = parser.parse_args()
     os.makedirs(args.output_dir, exist_ok=True)
-    filenames = glob.glob(os.path.join(args.input_dir, "df.*.xml"))
+    filenames = glob.glob(os.path.join(args.input_dir, 'df.*.xml'))
     filenames.sort()
     trees = list(map(load_and_transform, filenames))
     write_codegen_out_xml(trees, args.output_dir)
