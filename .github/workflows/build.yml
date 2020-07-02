@@ -31,5 +31,5 @@ jobs:
     - name: Verify list.py output
       run: |
         ls codegen | sort | grep -v codegen.out.xml > ls.out
-        python ./list.py | cut -d/ -f2 | sort > list.py.out
+        python ./codegen/list.py | cut -d/ -f2 | sort > list.py.out
         diff ls.out list.py.out
