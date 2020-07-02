@@ -23,13 +23,13 @@ jobs:
         xmllint --schema data-definition.xsd --noout df.*.xml symbols.xml
     - name: Generate headers
       run: |
-        perl ./codegen.pl | tee codegen-out.txt
+        perl ./codegen.pl . out | tee codegen-out.txt
         if grep -i error codegen-out.txt; then
           echo codegen produced error
           exit 1
         fi
     - name: Verify list.py output
       run: |
-        ls codegen | sort | grep -v codegen.out.xml > ls.out
+        ls out | sort | grep -v codegen.out.xml > ls.out
         python ./codegen/list.py | cut -d/ -f2 | sort > list.py.out
         diff ls.out list.py.out
