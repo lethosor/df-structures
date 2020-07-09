@@ -33,7 +33,7 @@
         <flag-bit name='invades' comment='Marauder resident/invader moving in all the way'/>
         <flag-bit name='check_flows' comment='Check against flows next time you get a chance'/>
 
-        <flag-bit name='ridden'/>
+        <flag-bit names='ridden'/>
         <flag-bit name='caged'/>
         <flag-bit name='tame'/>
         <flag-bit name='chained'/>
